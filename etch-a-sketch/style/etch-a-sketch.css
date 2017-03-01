@@ -1,9 +1,10 @@
 .container {
     font-size: 0;
     border: 1px solid black;
-    width: 600.5px;
-    height: 606px;
+    width: 600px;
+    height: 600px;
     margin: 30px auto;
+    overflow: hidden;
 }
 
 #button {
@@ -18,15 +19,7 @@
     box-shadow: 0px 0px 30px 5px lightgrey;
 }
 
-.row {
-    width: 600px;
-    height: 35.5px;
-}
-
 .square {
     display: inline-block;
     position: relative;
-    width: 35.5px;
-    height: 35.5px;
-    border: 1px solid black;
 }

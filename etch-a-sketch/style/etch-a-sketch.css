@@ -1,15 +1,63 @@
+.palette {
+    border: 1px solid black;
+    float: left;
+    position: fixed;
+    width: 52px;
+    height: 600px;
+    margin-top: 30px;
+    margin-left: 250px;
+}
+
+.palette div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin: 40px 0 40px 0;
+}
+
+#black {
+    background-color: black;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
 .container {
     font-size: 0;
     border: 1px solid black;
     width: 600px;
     height: 600px;
-    margin: 30px auto;
     overflow: hidden;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 #button {
-    margin: 0 auto;
     width: 100px;
+    position: fixed;
+    top: 650px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 #reset {

@@ -17,17 +17,23 @@ function createBoard(newSquares) {
 }
 
 function hoverDraw() {
-    $('.square').hover(function () {
-        var opacityAmount = 0.1
-        if (opacityAmount < 1) {
-            $(this).css({ "background-color": "#000000", "opacity": opacityAmount })
-        };
-        opacityAmount += 0.1
-    });
+    // var opacityAmount = 0.1
+    $('.square').hover(
+        function() {
+            // if (opacityAmount < 1.0) {
+                // $(this).css({ "background-color": "#000000", "opacity": opacityAmount });
+                $(this).css({ "background-color": "#000000" });
+                // opacityAmount += 0.1
+            // };
+        }, function() {
+            // $(this).css({ "background-color": "#000000", "opacity": opacityAmount });
+            $(this).css({ "background-color": "#000000" });
+        }
+    );
 }
 
 function resetBoard() {
     $('.container').empty();
     var userSquares = parseInt(prompt("How many squares would you like? Numbers only please"), 10);
     createBoard(userSquares);
-};
+}

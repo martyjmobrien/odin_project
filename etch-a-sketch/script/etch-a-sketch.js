@@ -51,7 +51,10 @@ function createBoard(newSquares) {
         $('.container').append('<div class="square">');
     };
 
-    $('.square').css({ "width": squareSize, "height": squareSize });
+    $('.square').css({ width: squareSize, height: squareSize });
+    // console.log(squareSize)
+    // console.log($('.square').width())
+    // console.log($('.square').height())
 
     hoverDraw("#000000");
 };
@@ -61,8 +64,8 @@ function hoverDraw(squareColor) {
     $('.opacity > div').css({ "background-color": squareColor })
     $('.square').mousedown(function() {
         $('.square').mousemove(function(e) {
-            if(e.which==1) {
-                $(this).css({ "background-color": squareColor, "opacity": currentOpacity });
+            if(e.buttons==1) {
+                $(this).css({ "background-color": squareColor, opacity: currentOpacity });
             };
         });
     });

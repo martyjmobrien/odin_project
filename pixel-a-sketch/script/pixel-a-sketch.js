@@ -3,7 +3,7 @@ currentOpacity = 1;
 currentShape = "0"
 
 $(document).ready(function() {
-    $('.container, .palette > div, .opacity > div').hover(function() {
+    $('.container, .palette > div, .opacity > div, .toolShape > div').hover(function() {
         $(this).css("cursor", "pointer");
     });
     $('.opacity > div').css({ "background-color": currentColor });
@@ -95,10 +95,11 @@ function hoverDraw(squareColor) {
     currentColor = squareColor;
     $('.opacity > div').css({ "background-color": squareColor });
     $('.square').mousedown(function() {
-        $('.square').mousemove(function(e) {
-            if(e.buttons==1) {
-                $(this).css({ "background-color": squareColor, opacity: currentOpacity, "border-radius": currentShape });
-            };
+        $(this).css({ "background-color": squareColor, opacity: currentOpacity, "border-radius": currentShape });
+            $('.square').mousemove(function(e) {
+                if(e.buttons==1) {
+                    $(this).css({ "background-color": squareColor, opacity: currentOpacity, "border-radius": currentShape });
+                };
         });
     });
 };

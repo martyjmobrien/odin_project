@@ -4,9 +4,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/reset.css">
+        <link rel="stylesheet" href="style/normalize.css">
         <link rel="stylesheet" href="style/pixel-a-sketch.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <script rel="javascript" src="script/jquery-3.1.1.min.js"></script>
         <script rel="javascript" src="script/pixel-a-sketch.js"></script>
         <title>Pixel-A-Sketch</title>
@@ -14,7 +13,6 @@
 
     <body>
         <div class="container"></div>
-        <div id="button"><input id="reset" type="button" onclick="resetBoard();" value="New board!"></div>
         <div class="palette">
             <div id="black"></div>
             <div id="red"></div>
@@ -36,6 +34,7 @@
             <div id="rectangle"></div>
             <div id="circle"></div>
         </div>
+        <div id="button"><input id="reset" type="button" onclick="resetBoard();" value="New board!"></div>
         <p id="copyright">Created by Marty O'Brien 2017</p>
     </body>
 

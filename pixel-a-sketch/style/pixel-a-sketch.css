@@ -1,13 +1,9 @@
 html {
     background-color: lightslategrey;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .palette {
-    margin-top: -694px;
+    margin-top: -600px;
     margin-left: calc(50% - 370px);
     width: 50px;
     height: 596px;
@@ -202,8 +198,8 @@ img {
     border-radius: 5px;
     box-shadow: 0 0 10px 1px lightgrey;
     font-size: 1em;
+    padding: 5px;
     font-family: 'Open Sans', sans-serif;
-    padding-top: 5px;
 }
 
 #reset:hover {
@@ -216,7 +212,7 @@ img {
 }
 
 #copyright {
-    font-size: 0.8em;
+    font-size: 12px;
     text-align: center;
-    margin-top: 90px;
+    margin-top: 30px;
 }

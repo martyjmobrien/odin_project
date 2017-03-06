@@ -78,7 +78,7 @@ function startBoard() {
 function createBoard(newSquares) {
     currentOpacity = 1
 
-    var squareSize = parseInt(Math.ceil(600 / newSquares)) + ".px";
+    var squareSize = parseInt(Math.ceil(600 / newSquares));
 
     var totalSquares = newSquares * newSquares;
     
@@ -94,10 +94,10 @@ function createBoard(newSquares) {
 function hoverDraw(squareColor) {
     currentColor = squareColor;
     $('.opacity > div').css({ "background-color": squareColor });
-    $('.square').mousedown(function() {
+    $('.square').mousedown(function(e) {
         $(this).css({ "background-color": squareColor, opacity: currentOpacity, "border-radius": currentShape });
             $('.square').mousemove(function(e) {
-                if(e.buttons==1) {
+                if(e.which === 1 || e.buttons === 1) {
                     $(this).css({ "background-color": squareColor, opacity: currentOpacity, "border-radius": currentShape });
                 };
         });

@@ -4,7 +4,7 @@ html {
 
 .palette {
     margin-top: -600px;
-    margin-left: calc(50% - 370px);
+    margin-left: calc(50% - 365px);
     width: 50px;
     height: 596px;
     -moz-border-radius: 5px;
@@ -168,7 +168,7 @@ img {
     width: 600px;
     height: 600px;
     overflow: hidden;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 50%;
     -moz-transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);
@@ -182,9 +182,9 @@ img {
 
 #button {
     width: 100px;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: 50%;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     -moz-transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
@@ -214,5 +214,5 @@ img {
 #copyright {
     font-size: 12px;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15px;
 }

@@ -97,10 +97,14 @@ function hoverDraw(squareColor) {
     $('.square').mousedown(function(e) {
         $(this).css({ "background-color": squareColor, opacity: currentOpacity, "border-radius": currentShape });
             $('.square').mousemove(function(e) {
-                if(e.which === 1 || e.buttons === 1) {
-                    $(this).css({ "background-color": squareColor, opacity: currentOpacity, "border-radius": currentShape });
+                if( e.buttons === 0) {
+                    return;
+                } else {
+                    if( e.which === 1 || e.buttons === 1 ) {
+                        $(this).css({ "background-color": squareColor, opacity: currentOpacity, "border-radius": currentShape });
+                    };
                 };
-        });
+            });
     });
 };
 

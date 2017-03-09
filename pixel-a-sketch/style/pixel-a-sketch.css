@@ -190,7 +190,7 @@ img {
     transform: translate(-50%, 0);
 }
 
-#reset {
+.newBoardButton {
     width: 100px;
     background-color: white;
     -moz-border-radius: 5px;
@@ -202,8 +202,137 @@ img {
     font-family: 'Open Sans', sans-serif;
 }
 
-#reset:hover {
+.newBoardButton:hover {
     box-shadow: 0 0 20px 5px white;
+}
+
+.startBoardModal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    margin-left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: 90%;
+    height: 650px;
+    overflow: auto;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.start-Modal-Content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid black;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.newBoardModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    margin-left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: 800px;
+    height: 650px;
+    overflow: auto;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.new-Modal-Content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid black;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.startErrorModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    margin-left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: 800px;
+    height: 650px;
+    overflow: auto;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.startError-Modal-Content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid black;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.newErrorModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    margin-left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: 800px;
+    height: 650px;
+    overflow: auto;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.newError-Modal-Content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid black;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.close {
+    color: darkgray;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: -15px;
+    margin-right: -10px;
+}
+
+.close:hover,
+.close:focus {
+    cursor: pointer;
+    color: black;
+}
+
+.modalText {
+    text-align: center;
+}
+
+.inputField {
+    margin-left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+#userInputStartBoard, #userInputNewBoard, #startSubmit, #newSubmit, #startErrorSubmit, #startErrorSubmit {
+    margin-left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
 }
 
 .square {

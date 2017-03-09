@@ -12,23 +12,24 @@
     </head>
 
     <body>
-        <button id="newBoardModal">New Board!</button>
-        <div id="startModal" class="startModal">
+        <button class="newBoardButton" onclick="newBoardModal();">New Board!</button>
+        <div class="newBoardModal">
+            <div class="new-Modal-Content">
+                <span class="close">&times;</span>
+                <p id="modalText">Please choose the grid size you would like? Numbers only please. (Between 1 - 100)<br>
+                   <br>Caution: This will erase your current sketch</p>
+                <input id="userGrid" type="text">
+                <input type="button" value="Sketch!" onclick="hoverBoard();">
+            </div>
+        </div>
+    </body>
+</html>
+
+        <!--<div id="startModal" class="startModal">
             <div class="start-Modal-Content">
                 <span class="close">&times;</span>
                 <p>Welcome to Pixel-A-Sketch! Which pixel size would you like? Numbers only please. (Between 1 - 100)</p>
                 <input type="text">
                 <input type="submit">
             </div>
-        </div>
-        <div id="newBoardModal" class="newBoardModal">
-            <div class="new-Modal-Content">
-                <span class="close">&times;</span>
-                <p>Please choose the pixel size you would like? Numbers only please. (Between 1 - 100)</p>
-                <p>Caution: This will erase your current sketch</p>
-                <input type="text">
-                <input type="submit">
-            </div>
-        </div>
-    </body>
-</html>
+        </div>-->

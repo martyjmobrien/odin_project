@@ -1,8 +1,13 @@
-var newBoardButton = document.getElementById("newBoardModal");
+function newBoardModal() {
+    $('.newBoardModal').css({ display: "block" })
+        $('.close').click(function() {
+            $('.newBoardModal').css({ display: "none" });  
+        }) ;  
+};
 
-$(document).ready(function() {
-    $('.startModal').css({ display: "block" });
-    $("newBoardButton").onclick(function() {
-        $('.newBoardModal').css({ display: "block" });
-});
+function hoverBoard() {
+    var userGridSize = $('#userGrid').val();
+    console.log(userGridSize);
+};
+
 

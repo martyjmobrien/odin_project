@@ -55,24 +55,48 @@ $(document).ready(function() {
     $('#circle').click(function() {
         currentShape = "50%";
     });
-    startBoard();
+
+    $('#userInputStartBoard').focus();
+
+    $('#startSubmit').click(function() {
+        startBoard(userGridSize);
+    });
+
+    $('.startBoardModal').keypress(function(e) {
+        if( e.which === 13 ) {
+            startBoard(userGridSize);
+        };
+    });
 });
 
-function startBoard() {
-    var userSquares = prompt("Welcome to Pixel-A-Sketch! Which pixel size would you like? Numbers only please. (Between 1 - 100)");
-    if(userSquares === null) {
-        alert("You can't play unless you enter a number between 1 - 100!");
-        startBoard();
-    } else {
-        if(userSquares === "" || userSquares < 1 || userSquares > 100 || $.isNumeric(userSquares) != true) {
-            alert("Please enter a number between 1 - 100");
-            startBoard();
+function startBoardModal() {
+    $('.startBoardModal').css({ display: "block" });
+    $('#userInputStartBoard').focus();
+    $('#startSubmit').click(function() {
+        var userGridSize = $('#userInputStartBoard').val();
+        $('#userInputStartBoard').val("");
+        createStartBoard(userGridSize);
+    });
+    $('.startBoardModal').keypress(function(e) {
+        if( e.which === 13 ) {
+            var userGridSize = $('#userInputStartBoard').val();
+            $('#userInputStartBoard').val("");
+            createStartBoard(userGridSize);
+        };
+    });
+};
+
+function createStartBoard(userGridSize) {
+        if (userGridSize === "" || userGridSize < 1 || userGridSize > 100 || $.isNumeric(userGridSize) != true) {
+            $('#userInputStartBoard').val("");
+            startErrorModal();
         } else {
-            if($.isNumeric(userSquares)) {
-                createBoard(userSquares);
-            }
-        }
-    }
+            if($.isNumeric(userGridSize)) {
+                $('#userInputStartBoard').val("");
+                $('.startBoardModal').css({ display: "none" });
+                createBoard(userGridSize);
+            };
+        };
 };
 
 function createBoard(newSquares) {
@@ -108,18 +132,53 @@ function hoverDraw(squareColor) {
     });
 };
 
-function resetBoard() {
-    var userSquares = prompt("Which pixel size would you like? Numbers only please. (Between 1 - 100)");
-    if(userSquares === null) {
-        hoverDraw(currentColor);
-    } else {
-        if(userSquares === "" || userSquares < 1 || userSquares > 100 || $.isNumeric(userSquares) != true) {
-            resetBoard();
-        } else {
-            if($.isNumeric(userSquares)) {
-                $('.container').empty();
-                createBoard(userSquares);
-            }
-        }
-    }
+function newBoardModal() {
+    $('.newBoardModal').css({ display: "block" });
+        $('.close').click(function() {
+            $('.newBoardModal').css({ display: "none" });  
+        });
+    $('#userInputNewBoard').focus();
+    $('#newSubmit').click(function() {
+        var userGridSize = $('#userInputNewBoard').val();
+        $('#userInputNewBoard').val("");
+        createNewBoard(userGridSize);
+    });
+    $('.newBoardModal').keypress(function(e) {
+        if( e.which === 13 ) {
+            var userGridSize = $('#userInputNewBoard').val();
+            $('#userInputNewBoard').val("");
+            createNewBoard(userGridSize);
+        };
+    });
+};
+
+function createNewBoard(userGridSize) {
+        if (userGridSize === "" || userGridSize < 1 || userGridSize > 100 || $.isNumeric(userGridSize) != true) {
+            $('#userInputNewBoard').val("");
+            newErrorModal();
+            } else {
+                if($.isNumeric(userGridSize)) {
+                    $('.container').empty();
+                    $('.newBoardModal').css({ display: "none" });
+                    createBoard(userGridSize);
+                };
+        };
+};
+
+function startErrorModal() {
+    $('.startBoardModal').css({ display: "none" });
+    $('.startErrorModal').css({ display: "block" });
+            $('#startErrorSubmit').click(function() {
+                $('.startErrorModal').css({ display: "none" });
+                startBoardModal();
+            });
+};
+
+function newErrorModal() {
+    $('.newBoardModal').css({ display: "none" });
+    $('.newErrorModal').css({ display: "block" });
+            $('#newErrorSubmit').click(function() {
+                $('.newErrorModal').css({ display: "none" });
+                newBoardModal();
+            });
 };

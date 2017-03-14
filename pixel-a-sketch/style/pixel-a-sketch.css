@@ -3,6 +3,7 @@ html {
 }
 
 .palette {
+    display: none;
     margin-top: -600px;
     margin-left: calc(50% - 365px);
     width: 50px;
@@ -75,6 +76,7 @@ img {
 }
 
 .opacity {
+    display: none;
     margin-top: -599px;
     margin-left: calc(50% + 315px);
     width: 50px;
@@ -118,6 +120,7 @@ img {
 }
 
 .toolShape {
+    display: none;
     margin-top: 18px;
     margin-left: calc(50% + 315px);
     width: 50px;
@@ -164,6 +167,7 @@ img {
 }
 
 .container {
+    display: none;
     font-size: 0;
     width: 600px;
     height: 600px;
@@ -181,6 +185,7 @@ img {
 }
 
 #button {
+    display: none;
     width: 100px;
     margin-top: 15px;
     margin-left: 50%;
@@ -208,15 +213,16 @@ img {
 
 .startBoardModal {
     overflow: auto;
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1;
+    margin-top: 30px;
     margin-left: 50%;
     -moz-transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
     width: 90%;
-    height: 650px;
+    height: 600px;
     background-color: white;
     border-radius: 5px;
 }
@@ -291,6 +297,7 @@ img {
 }
 
 #copyright {
+    display: none;
     font-size: 12px;
     text-align: center;
     margin-top: 15px;

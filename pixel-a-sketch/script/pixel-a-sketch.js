@@ -56,6 +56,7 @@ $(document).ready(function() {
         currentShape = "50%";
     });
 
+    $('.startBoardModal').fadeIn('slow');
     $('#userInputStartBoard').focus();
     $('#startSubmit').click(function() {
         var startGridSize = $('#userInputStartBoard').val();
@@ -71,8 +72,9 @@ $(document).ready(function() {
 });
 
 function startBoardModal() {
+    $('#userInputStartBoard').val("");
     if ( $('.startBoardModal').css( "display" ) === "none" ) {
-        $('.startBoardModal').css({ display: "block" });
+        $('.startBoardModal').fadeIn('slow');
     };
     $('#userInputStartBoard').focus();
 };
@@ -92,7 +94,8 @@ function createBoard(userGridSize) {
                 };
                 $('.square').css({ width: gridSize, height: gridSize });
                 hoverDraw("#000000");
-                $('.startBoardModal').css({ display: "none" });
+                $('.startBoardModal').fadeOut('fast');
+                $('.container, .opacity, .toolShape, .palette, #button, #copyright').fadeIn('slow');
             };
         };
 };

@@ -57,62 +57,44 @@ $(document).ready(function() {
     });
 
     $('#userInputStartBoard').focus();
-
     $('#startSubmit').click(function() {
-        startBoard(userGridSize);
+        var startGridSize = $('#userInputStartBoard').val();
+        createBoard(startGridSize);
     });
-
     $('.startBoardModal').keypress(function(e) {
         if( e.which === 13 ) {
-            startBoard(userGridSize);
+            var startGridSize = $('#userInputStartBoard').val();
+            createBoard(startGridSize);
         };
     });
+
 });
 
 function startBoardModal() {
-    $('.startBoardModal').css({ display: "block" });
+    if ( $('.startBoardModal').css( "display" ) === "none" ) {
+        $('.startBoardModal').css({ display: "block" });
+    };
     $('#userInputStartBoard').focus();
-    $('#startSubmit').click(function() {
-        var userGridSize = $('#userInputStartBoard').val();
-        $('#userInputStartBoard').val("");
-        createStartBoard(userGridSize);
-    });
-    $('.startBoardModal').keypress(function(e) {
-        if( e.which === 13 ) {
-            var userGridSize = $('#userInputStartBoard').val();
-            $('#userInputStartBoard').val("");
-            createStartBoard(userGridSize);
-        };
-    });
 };
 
-function createStartBoard(userGridSize) {
+function createBoard(userGridSize) {
+    console.log(userGridSize);
+    $('.container').empty();
         if (userGridSize === "" || userGridSize < 1 || userGridSize > 100 || $.isNumeric(userGridSize) != true) {
-            $('#userInputStartBoard').val("");
-            startErrorModal();
+            errorModal();
         } else {
             if($.isNumeric(userGridSize)) {
-                $('#userInputStartBoard').val("");
+                currentOpacity = 1
+                var gridSize = parseInt(Math.ceil(600 / userGridSize));
+                var totalSquares = userGridSize * userGridSize;
+                for ( i = 0; i < totalSquares; i++) {
+                    $('.container').append('<div class="square">');
+                };
+                $('.square').css({ width: gridSize, height: gridSize });
+                hoverDraw("#000000");
                 $('.startBoardModal').css({ display: "none" });
-                createBoard(userGridSize);
             };
         };
-};
-
-function createBoard(newSquares) {
-    currentOpacity = 1
-
-    var squareSize = parseInt(Math.ceil(600 / newSquares));
-
-    var totalSquares = newSquares * newSquares;
-    
-    for ( i = 0; i < totalSquares; i++) {
-        $('.container').append('<div class="square">');
-    };
-
-    $('.square').css({ width: squareSize, height: squareSize });
-
-    hoverDraw("#000000");
 };
 
 function hoverDraw(squareColor) {
@@ -132,53 +114,17 @@ function hoverDraw(squareColor) {
     });
 };
 
-function newBoardModal() {
-    $('.newBoardModal').css({ display: "block" });
-        $('.close').click(function() {
-            $('.newBoardModal').css({ display: "none" });  
-        });
-    $('#userInputNewBoard').focus();
-    $('#newSubmit').click(function() {
-        var userGridSize = $('#userInputNewBoard').val();
-        $('#userInputNewBoard').val("");
-        createNewBoard(userGridSize);
-    });
-    $('.newBoardModal').keypress(function(e) {
-        if( e.which === 13 ) {
-            var userGridSize = $('#userInputNewBoard').val();
-            $('#userInputNewBoard').val("");
-            createNewBoard(userGridSize);
-        };
-    });
-};
-
-function createNewBoard(userGridSize) {
-        if (userGridSize === "" || userGridSize < 1 || userGridSize > 100 || $.isNumeric(userGridSize) != true) {
-            $('#userInputNewBoard').val("");
-            newErrorModal();
-            } else {
-                if($.isNumeric(userGridSize)) {
-                    $('.container').empty();
-                    $('.newBoardModal').css({ display: "none" });
-                    createBoard(userGridSize);
-                };
-        };
-};
-
-function startErrorModal() {
+function errorModal() {
     $('.startBoardModal').css({ display: "none" });
-    $('.startErrorModal').css({ display: "block" });
-            $('#startErrorSubmit').click(function() {
-                $('.startErrorModal').css({ display: "none" });
+        $('.errorModal').css({ display: "block" });
+            $('#errorSubmit').click(function() {
+                $('.errorModal').css({ display: "none" });
                 startBoardModal();
+            $('.errorModal').keypress(function(e) {
+                if( e.which === 13 ) {
+                    $('.errorModal').css({ display: "none" });
+                    startBoardModal();
+                };
             });
-};
-
-function newErrorModal() {
-    $('.newBoardModal').css({ display: "none" });
-    $('.newErrorModal').css({ display: "block" });
-            $('#newErrorSubmit').click(function() {
-                $('.newErrorModal').css({ display: "none" });
-                newBoardModal();
             });
 };

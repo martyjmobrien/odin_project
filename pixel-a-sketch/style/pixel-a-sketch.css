@@ -207,6 +207,7 @@ img {
 }
 
 .startBoardModal {
+    overflow: auto;
     display: block;
     position: fixed;
     z-index: 1;
@@ -216,7 +217,6 @@ img {
     transform: translate(-50%, 0);
     width: 90%;
     height: 650px;
-    overflow: auto;
     background-color: white;
     border-radius: 5px;
 }
@@ -224,13 +224,13 @@ img {
 .start-Modal-Content {
     background-color: white;
     margin: 10% auto;
-    padding: 20px;
     border: 1px solid black;
     width: 80%;
     border-radius: 5px;
 }
 
-.newBoardModal {
+.errorModal {
+    overflow: auto;
     display: none;
     position: fixed;
     z-index: 1;
@@ -240,63 +240,13 @@ img {
     transform: translate(-50%, 0);
     width: 800px;
     height: 650px;
-    overflow: auto;
     background-color: white;
     border-radius: 5px;
 }
 
-.new-Modal-Content {
+.error-Modal-Content {
     background-color: white;
     margin: 10% auto;
-    padding: 20px;
-    border: 1px solid black;
-    width: 80%;
-    border-radius: 5px;
-}
-
-.startErrorModal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    margin-left: 50%;
-    -moz-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    width: 800px;
-    height: 650px;
-    overflow: auto;
-    background-color: white;
-    border-radius: 5px;
-}
-
-.startError-Modal-Content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid black;
-    width: 80%;
-    border-radius: 5px;
-}
-
-.newErrorModal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    margin-left: 50%;
-    -moz-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    width: 800px;
-    height: 650px;
-    overflow: auto;
-    background-color: white;
-    border-radius: 5px;
-}
-
-.newError-Modal-Content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 20px;
     border: 1px solid black;
     width: 80%;
     border-radius: 5px;
@@ -328,7 +278,7 @@ img {
     transform: translate(-50%, 0);
 }
 
-#userInputStartBoard, #userInputNewBoard, #startSubmit, #newSubmit, #startErrorSubmit, #startErrorSubmit {
+#userInputStartBoard, #startSubmit, #errorSubmit {
     margin-left: 50%;
     -moz-transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);

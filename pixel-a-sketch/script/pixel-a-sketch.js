@@ -1,6 +1,7 @@
-currentColor = "#000000";
-currentOpacity = 1;
-currentShape = "0"
+var userStarted = false;
+var currentColor = "#000000";
+var currentOpacity = 1;
+var currentShape = "0"
 
 $(document).ready(function() {
     $('.container, .palette > div, .opacity > div, .toolShape > div').hover(function() {
@@ -55,6 +56,13 @@ $(document).ready(function() {
     $('#circle').click(function() {
         currentShape = "50%";
     });
+    
+    $('.close').click(function() {
+        if ( userStarted === true ) {
+            $('.startBoardModal').css({ display: "none" });
+            $('.container, .opacity, .toolShape, .palette, #button, #copyright').css({ display: "block" });
+        }
+    })
 
     $('.startBoardModal').fadeIn('slow');
     $('#userInputStartBoard').focus();
@@ -72,6 +80,7 @@ $(document).ready(function() {
 });
 
 function startBoardModal() {
+    $('.container, .opacity, .toolShape, .palette, #button, #copyright').css({ display: "none" });
     $('#userInputStartBoard').val("");
     if ( $('.startBoardModal').css( "display" ) === "none" ) {
         $('.startBoardModal').fadeIn('slow');
@@ -80,7 +89,7 @@ function startBoardModal() {
 };
 
 function createBoard(userGridSize) {
-    console.log(userGridSize);
+    userStarted = true;
     $('.container').empty();
         if (userGridSize === "" || userGridSize < 1 || userGridSize > 100 || $.isNumeric(userGridSize) != true) {
             errorModal();
@@ -94,7 +103,7 @@ function createBoard(userGridSize) {
                 };
                 $('.square').css({ width: gridSize, height: gridSize });
                 hoverDraw("#000000");
-                $('.startBoardModal').fadeOut('fast');
+                $('.startBoardModal').css({ display: "none" });
                 $('.container, .opacity, .toolShape, .palette, #button, #copyright').fadeIn('slow');
             };
         };
@@ -118,16 +127,11 @@ function hoverDraw(squareColor) {
 };
 
 function errorModal() {
-    $('.startBoardModal').css({ display: "none" });
+    $('.startBoardModal').css({ opacity: "0.3" });
         $('.errorModal').css({ display: "block" });
             $('#errorSubmit').click(function() {
                 $('.errorModal').css({ display: "none" });
+                $('.startBoardModal').css({ opacity: "1" });
                 startBoardModal();
-            $('.errorModal').keypress(function(e) {
-                if( e.which === 13 ) {
-                    $('.errorModal').css({ display: "none" });
-                    startBoardModal();
-                };
-            });
             });
 };

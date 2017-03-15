@@ -96,6 +96,7 @@ function createBoard(userGridSize) {
         } else {
             if($.isNumeric(userGridSize)) {
                 currentOpacity = 1
+                currentShape = 0
                 var gridSize = parseInt(Math.ceil(600 / userGridSize));
                 var totalSquares = userGridSize * userGridSize;
                 for ( i = 0; i < totalSquares; i++) {
